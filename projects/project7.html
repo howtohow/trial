@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src="https://kit.fontawesome.com/d50a5e6e19.js" crossorigin="anonymous"></script>
+    <title>title</title>
+        <link rel="stylesheet" href='../css/main.css'>
+
+  </head>
+  <body>
+
+<header>
+
+  <div class='menu-btn'>
+      <div class='btn-line'></div>
+      <div class='btn-line'></div>
+      <div class='btn-line'></div>
+  </div> 
+
+  <nav class='menu'>
+<!-- MENU BRANDING WILL BE THE NAME/PIC OF THE MYSELF ON THE LEFT ON CLICKING THE MENU BUTTON  -->
+    <div class='menu-branding'>
+      <div class='portrait'></div>
+    </div>
+<!-- MENU-NAV WILL BE THE LINKS TO DIFFERENT PAGES -->
+    <ul class='menu-nav'>
+        <li class='nav-item'>
+          <a href='../index.html' class='nav-link'>HOME</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../about.html' class='nav-link'>ABOUT ME</a>
+        </li>
+        <li class='nav-item current'>
+          <a href='../work.html' class='nav-link'>MY WORK</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../certificates.html' class='nav-link'>CERTIFICATES</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../contact.html' class='nav-link'>HOW TO REACH ME</a>
+        </li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- </body>
+</html> -->
+
+
+  <h2 class='sm-heading click' >CLICK ON IT TO START PLAYING.</h2>
+<div class='parent'>
+    <div class='child1'>
+               
+        <iframe scrolling="no"; src="https://editor.p5js.org/adarshjadhav4/embed/HL-toJzNM"></iframe>
+    </div>
+    <div class='child2'>
+        <div class='btn1'>
+            <button onclick="clipboard('copy')">Copy</button>
+        </div>
+        
+        <div class='btn1'>
+            <a href="https://editor.p5js.org/adarshjadhav4/sketches/HL-toJzNM" class="button"><button>Edit</button></a>
+        </div>   
+    </div>
+    <div class='child3'>
+<pre class='copy'>
+let r1 = 90;
+let r2 = 90;
+let m1 = 20;
+let m2 = 20;
+let a1 = Math.PI / 2;
+let a2 = Math.PI / 2;
+let a1_v = 0;
+let a2_v = 0;
+let g = 1;
+let px2 = -1;
+let py2 = -1;
+let cx, cy;
+
+function setup() {
+  createCanvas(400, 400);
+  cx = width / 2;
+  cy = 100;
+  extracanvas = createGraphics(400, 400);
+  extracanvas.background(230);
+  background(230);
+}
+
+
+
+function draw() {
+
+  a1_a = (-g * (2 * m1 + m2) * sin(a1) - m2 * g * sin(a1 - 2 * a2) - 2 * sin(a1 - a2) * m2 * (a2_v * a2_v * r2 + a1_v * a1_v * r1 * cos(a1 - a2))) / (r1 * (2 * m1 + m2 - m2 * cos(2 * a1 - 2 * a2)));
+  a2_a = (2 * sin(a1 - a2) * (a1_v * a1_v * r1 * (m1 + m2) + g * (m1 + m2) * cos(a1) + a2_v * a2_v * r2 * m2 * cos(a1 - a2))) / (r2 * (2 * m1 + m2 - m2 * cos(2 * a1 - 2 * a2)));
+
+  //a2_a=0;
+  ///background(230);
+  image(extracanvas, 0, 0);
+  //stroke(0);
+  //strokeWeight(2);
+  translate(cx, cy);
+  let x1 = r1 * sin(a1);
+  let y1 = r1 * cos(a1);
+  let x2 = x1 + r2 * sin(a2);
+  let y2 = y1 + r2 * cos(a2);
+
+  line(0, 0, x1, y1);
+  fill(0);
+  ellipse(x1, y1, m1, m1);
+  line(x1, y1, x2, y2);
+  fill(0);
+  ellipse(x2, y2, m2, m2);
+  //a1+=a1_v;
+  //a2+=a2_v;
+  a1_v += a1_a;
+  a2_v += a2_a;
+  a1 += a1_v;
+  a2 += a2_v;
+
+  extracanvas.beginShape();
+  //extracanvas.translate(300,50);
+  extracanvas.strokeWeight(1);
+  extracanvas.stroke(0);
+  if(frameCount > 1) {
+    extracanvas.line(px2 + 200, py2 + 100, x2 + 200, y2 + 100);
+  }
+  extracanvas.endShape();
+  //image(extracanvas,0,0);
+  px2 = x2;
+  py2 = y2;
+}
+</pre>
+
+
+    </div>
+   
+</div>
+<script src='../js/main.js'></script>
+  </body>
+</html>

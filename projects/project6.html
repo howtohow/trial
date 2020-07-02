@@ -1,0 +1,119 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src="https://kit.fontawesome.com/d50a5e6e19.js" crossorigin="anonymous"></script>
+    <title>title</title>
+        <link rel="stylesheet" href='../css/main.css'>
+
+  </head>
+  <body>
+
+<header>
+
+  <div class='menu-btn'>
+      <div class='btn-line'></div>
+      <div class='btn-line'></div>
+      <div class='btn-line'></div>
+  </div> 
+
+  <nav class='menu'>
+<!-- MENU BRANDING WILL BE THE NAME/PIC OF THE MYSELF ON THE LEFT ON CLICKING THE MENU BUTTON  -->
+    <div class='menu-branding'>
+      <div class='portrait'></div>
+    </div>
+<!-- MENU-NAV WILL BE THE LINKS TO DIFFERENT PAGES -->
+    <ul class='menu-nav'>
+        <li class='nav-item'>
+          <a href='../index.html' class='nav-link'>HOME</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../about.html' class='nav-link'>ABOUT ME</a>
+        </li>
+        <li class='nav-item current'>
+          <a href='../work.html' class='nav-link'>MY WORK</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../certificates.html' class='nav-link'>CERTIFICATES</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../contact.html' class='nav-link'>HOW TO REACH ME</a>
+        </li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- </body>
+</html> -->
+
+
+  <h2 class='sm-heading click' >CLICK ON IT TO START PLAYING.</h2>
+<div class='parent'>
+    <div class='child1'>
+               
+        <iframe scrolling="no"; src="https://editor.p5js.org/adarshjadhav4/embed/ZiAI6JB13"></iframe>
+        
+    </div>
+    <div class='child2'>
+        <div class='btn1'>
+            <button onclick="clipboard('copy')">Copy</button>
+        </div>
+        
+        <div class='btn1'>
+            <a href="https://editor.p5js.org/adarshjadhav4/sketches/ZiAI6JB13" class="button"><button>Edit</button></a>
+        </div>   
+    </div>
+    <div class='child3'>
+<pre class='copy'>
+let angle = 0;
+let w = 24;
+let ma;
+let maxD;
+
+function setup() {
+  createCanvas(400, 400, WEBGL);
+  ma = atan(1 / sqrt(2));
+  maxD = dist(0, 0, 200, 200);
+}
+
+function draw() {
+  background(100);
+  ortho(-400, 400, -400, 400, 0, 1000);
+
+  //translate(0,0,-100);
+  rotateX(-QUARTER_PI);
+  rotateY(ma);
+
+  //let offset=0;
+  for(let z = 0; z < height; z += w) {
+    for(let x = 0; x < width; x += w) {
+      push();
+      let d = dist(x, z, width / 2, height / 2);
+      let offset = map(d, 0, maxD, -PI, PI);
+      let a = angle + offset;
+      let h = floor(map(sin(a), -1, 1, 100, 300));
+      translate(x - width / 2, 0, z - height / 2);
+      normalMaterial();
+      box(w - 2, h, w - 2);
+      //rect(x-width/2+w/2,0,w-2,h);
+      pop();
+    }
+    //offset+=0.1;
+  }
+  angle -= 0.15;
+}
+</pre>
+
+
+    </div>
+   
+</div>
+
+<script src='../js/main.js'></script>
+  </body>
+</html>
