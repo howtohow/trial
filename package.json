@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "PF",
   "main": "index.js",
-	"homepage":"https://howtohow.github.io/trial",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
-	  "deploy":"gh-pages -d dist"
+	 
   },
   "author": "adarshjadhav",
   "license": "MIT",
