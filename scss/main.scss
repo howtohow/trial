@@ -1,0 +1,275 @@
+@import 'config';
+@import 'menu';
+// @import 'mobile';
+
+*{
+box-sizing:border-box;
+}
+
+body{
+    @include background;
+    background:$primary-color;
+    color:set-text-color($primary-color);
+    height:100%;
+    margin:0;
+    font-family:'Segou UI','Tahoma',Geneva,Verdana,sans-serif;
+    line-height:1.5;
+}
+
+//HEADINGS
+
+h1,h2,h3
+{
+margin:0;
+font-weight:400;
+
+    &.lg-heading{
+        font-size:5rem;
+    }
+
+    &.sm-heading{
+        margin-bottom:2rem;
+        padding:0.2rem 1rem; 
+        background:rgba(lighten($primary-color,2),0.5);
+    }
+}
+
+a{
+    color:#fff;
+    text-decoration:none;
+}
+
+header{
+position:fixed;
+z-index:2;
+width:100%;
+}
+
+.text-secondary{
+    color:$secondary-color;
+}
+.text-primary{
+    color:#e9e9e9;
+}
+
+main{
+    padding:4rem;
+    // height:100%;
+    min-height:calc(100vh-60px);
+
+    .icons{
+        margin-top:1rem;
+        
+        a {
+            padding:0.4rem;
+
+            &:hover{
+                color:$secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+    &#home{
+        overflow:hidden;
+        h1{
+            margin-top:20vh;
+        }
+    }
+}
+
+.about-info{
+    display:grid;
+    grid-gap:30px;
+    grid-template-areas:
+    'bioimage bio bio'
+    'job1 job2 job3';
+    grid-template-columns:repeat(3,1fr);
+
+    .bio-image{
+        grid-area:bioimage;
+        margin:auto;
+        border-radius:50%;
+        border:$secondary-color 3px solid;
+        //REMOVE HEIGHT FOR DEFAULT OR CHANGE IT ACCORDING TO WHAT YOU WANT.
+        height:210px;
+
+    }
+
+    .bio{
+        grid-area:bio;
+        word-wrap: break-word;
+        font-size:1.5rem;
+    }
+
+    .job-1{
+        grid-area:job1
+    }
+
+    .job-2{
+        grid-area:job2
+    }
+
+    .job-3{
+        grid-area:job3
+    }
+
+    .job{
+        background:lighten($primary-color,5);
+        padding:0.5rem;
+        border-bottom:$secondary-color 5px solid;
+    }
+}
+
+//WORK/PROJECTS
+.projects{
+    display:grid;
+    grid-gap:0.7rem;
+    grid-template-columns:repeat(3,1fr);
+
+
+    img{
+        //IF THIS LOOKS WEIRD REMOVE WIDTH.
+        width:100%;
+        border:3px #fff solid;
+
+        &:hover{
+            opacity:0.5;
+            border-color:$secondary-color;
+            @include easeOut;   
+        }
+    }
+}
+.certificates{
+    display:grid;
+    grid-gap:0.7rem;
+    grid-template-columns:repeat(3,1fr);
+
+
+    img{
+        //IF THIS LOOKS WEIRD REMOVE WIDTH.
+        width:100%;
+        height:220px;
+        border:3px #fff solid;
+
+        &:hover{
+            opacity:0.5;
+            border-color:$secondary-color;
+            @include easeOut;   
+        }
+    }
+}
+
+
+//CONTACT PAGE
+//USE THE GRID METHOD FROM THE ABOUT PAGE IF IT DOESNT LOOK GOOD
+.boxes{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+    align-items:center;
+    margin-top:1rem;
+
+    div{
+        font-size:2rem; 
+        border:3px #fff solid;
+        padding:1.5rem 2.5rem;
+        margin-bottom:3rem;
+        @include easeOut;
+
+        &:hover{
+            // padding:0.5rem 1.5rem;
+            background:$secondary-color;
+            color:set-text-color($secondary-color);
+            span{
+                color:set-text-color($secondary-color);
+            }
+        }
+    }
+}
+
+//BUTTON STYLES
+.btn{
+    display:block;
+    padding:0.5rem 1rem;
+    border:0;
+    margin-bottom:0.3rem;
+    &:hover{
+        background:$secondary-color;
+        color:set-text-color($secondary-color);
+    }
+}
+
+.btn-dark{
+    @extend .btn;  
+    background: darken($primary-color,50);
+    color:#fff;
+}
+
+.btn-light{
+    @extend .btn;
+    background: lighten($primary-color,50);
+    color:#fff;
+}
+
+// #main-footer{
+//     text-align:center;
+//     padding:1rem;
+//     background:darken($primary-color,10);
+//     color:set-text-color($primary-color);
+//     height:60px;
+// }
+
+
+.parent{
+height:100%;
+// border:2px red solid;
+display:flex;
+flex-direction:column;
+// justify-content:center;
+align-items:center;
+}
+.child1{
+height:400px;
+width:400px;
+// border:2px red solid;
+}
+.child2{
+height:35px;
+width:400px;
+// border:2px red solid;
+display:flex;
+justify-content:space-around;
+// align-items:left;
+}
+button{
+    margin:7px;
+    height:100%;
+    width:75px;
+    cursor:pointer;
+}
+
+.child3{
+height:100%;
+width:400px;
+// border:2px red solid;
+align-items:left;
+}
+
+.sm-heading{
+    &.click{
+text-align:center;
+    }
+}
+
+iframe{
+    width: 400px; 
+    height: 400px;
+    overflow: hidden;
+    // display:inline-block;
+}
+
+////////////////////////////////////
+// 
+////////////////////////////////////
+
+@import 'mobile';

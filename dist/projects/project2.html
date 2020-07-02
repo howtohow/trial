@@ -1,0 +1,396 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+        <link rel="stylesheet" href='../css/main.css'>
+
+  </head>
+  <body>
+    <h2 class='sm-heading'>Click on it to start playing.</h2>
+<div class='container'>
+    <iframe scrolling="no"; src="https://editor.p5js.org/adarshjadhav4/embed/ZXigasLg4"></iframe>
+</div>
+
+<pre>
+    <div class='cont'>
+    var y=[-50,];
+    var x=[0,];
+    var y1=-100;
+    var x1=50;
+    var x2=50;
+    var y2=350;
+    var right=0.2;
+    var left=0.2;
+    var score=0;
+    var dscore=0;
+    var speed=1;
+    function setup(){
+    createCanvas(400,400);
+    }
+    function draw(){
+    background(230);
+    for(var i=0;i< y.length;i++){
+    rect(x[i],y[i],15,25);
+    }
+    for(i=0;i< y.length;i++){
+    y[i]=y[i]+speed;
+    }
+    if(Math.min(...y)==0){
+    x.push(random(0,375));
+    y.push(-50);
+    for(i=0;i< y.length;i++){
+    //y[i]-=5;
+    rect(x[i],y[i],15,25);
+    }
+    }
+    if (keyIsDown(LEFT_ARROW)) {
+    right=0.2;
+    left+=0.2;
+    // console.log(x2);
+    x2=x2-left;
+    if(x2<=2){
+    x2=3;
+    }
+    rect(x2-=3, y2, 50, 50);   
+    } else if(keyIsDown(RIGHT_ARROW)){
+    left=0.2;
+    right+=0.2;
+
+    x2=x2+right;
+    if(x2>=347){
+    x2=345;
+    }
+    rect(x2+=3, y2, 50, 50);
+    }else{
+    right=0.2;
+    left=0.2;
+    }
+    rect(x2,y2,50,50);
+
+    if(y[0]>300){
+    for(i=0;i< x.length;i++){
+    if(x[i]<=x2+50 & x[i]>=x2){
+    if(y[i]>=y2){
+        noLoop();
+    fill(255,0,0);
+    }
+    else if(y[i]+25>=y2 & y[i]+25<=height){
+        noLoop();
+    fill(255,0,0);
+    }
+    }
+    if(x[i]+15<=x2+50 & x[i]+15>=x2){
+    if(y[i]>=y2){
+        noLoop();
+    fill(255,0,0);
+    }
+    else if(y[i]+25>=y2 & y[i]+25<=height){
+        noLoop();
+    fill(255,0,0);
+    }
+    }
+    }
+    }
+    if(Math.max(...y)>height){
+    y.shift();
+    x.shift();
+    }
+    score++;
+    if(score%100==0){
+    // console.log(dscore++);
+    }
+    textSize(13);
+    fill(255);
+    rect(150,0,100,25);
+    fill(50);
+    text("score: ",160,17);
+    text(score,195,17);
+    fill(255);
+    }
+    </div>
+</pre>
+
+  </body>
+</html> -->
+<!-- /////////////////////////////////// -->
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+        <link rel="stylesheet" href='../css/main.css'>
+
+  </head>
+  <body>
+<div class='parent'>
+    <div class='child1'>
+               
+        <iframe scrolling="no"; src="https://editor.p5js.org/adarshjadhav4/embed/ZXigasLg4"></iframe>
+    </div>
+    <div class='child2'>
+<pre>
+var y=[-50,];
+var x=[0,];
+var y1=-100;
+var x1=50;
+var x2=50;
+var y2=350;
+var right=0.2;
+var left=0.2;
+var score=0;
+var dscore=0;
+var speed=1;
+function setup(){
+createCanvas(400,400);
+}
+function draw(){
+background(230);
+for(var i=0;i< y.length;i++){
+rect(x[i],y[i],15,25);
+}
+for(i=0;i< y.length;i++){
+y[i]=y[i]+speed;
+}
+if(Math.min(...y)==0){
+x.push(random(0,375));
+y.push(-50);
+for(i=0;i< y.length;i++){
+//y[i]-=5;
+rect(x[i],y[i],15,25);
+}
+}
+if (keyIsDown(LEFT_ARROW)) {
+right=0.2;
+left+=0.2;
+// console.log(x2);
+x2=x2-left;
+if(x2<=2){
+x2=3;
+}
+rect(x2-=3, y2, 50, 50);   
+} else if(keyIsDown(RIGHT_ARROW)){
+left=0.2;
+right+=0.2;
+
+x2=x2+right;
+if(x2>=347){
+x2=345;
+}
+rect(x2+=3, y2, 50, 50);
+}else{
+right=0.2;
+left=0.2;
+}
+rect(x2,y2,50,50);
+
+if(y[0]>300){
+for(i=0;i< x.length;i++){
+if(x[i]<=x2+50 & x[i]>=x2){
+if(y[i]>=y2){
+    noLoop();
+fill(255,0,0);
+}
+else if(y[i]+25>=y2 & y[i]+25<=height){
+    noLoop();
+fill(255,0,0);
+}
+}
+if(x[i]+15<=x2+50 & x[i]+15>=x2){
+if(y[i]>=y2){
+    noLoop();
+fill(255,0,0);
+}
+else if(y[i]+25>=y2 & y[i]+25<=height){
+    noLoop();
+fill(255,0,0);
+}
+}
+}
+}
+if(Math.max(...y)>height){
+y.shift();
+x.shift();
+}
+score++;
+if(score%100==0){
+// console.log(dscore++);
+}
+textSize(13);
+fill(255);
+rect(150,0,100,25);
+fill(50);
+text("score: ",160,17);
+text(score,195,17);
+fill(255);
+}
+</pre>
+
+
+    </div>
+   
+</div>
+
+
+  </body>
+</html> -->
+<!-- ////////////////////////////////// -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src="https://kit.fontawesome.com/d50a5e6e19.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>title</title>
+        <link rel="stylesheet" href='../css/main.css'>
+
+  </head>
+  <body>
+
+<header>
+
+  <div class='menu-btn'>
+      <div class='btn-line'></div>
+      <div class='btn-line'></div>
+      <div class='btn-line'></div>
+  </div> 
+
+  <nav class='menu'>
+<!-- MENU BRANDING WILL BE THE NAME/PIC OF THE MYSELF ON THE LEFT ON CLICKING THE MENU BUTTON  -->
+    <div class='menu-branding'>
+      <div class='portrait'></div>
+    </div>
+<!-- MENU-NAV WILL BE THE LINKS TO DIFFERENT PAGES -->
+    <ul class='menu-nav'>
+        <li class='nav-item'>
+          <a href='../index.html' class='nav-link'>HOME</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../about.html' class='nav-link'>ABOUT ME</a>
+        </li>
+        <li class='nav-item current'>
+          <a href='../work.html' class='nav-link'>MY WORK</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../certificates.html' class='nav-link'>CERTIFICATES</a>
+        </li>
+        <li class='nav-item'>
+          <a href='../contact.html' class='nav-link'>HOW TO REACH ME</a>
+        </li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- </body>
+</html> -->
+
+
+  <h2 class='sm-heading click' >CLICK ON IT TO START PLAYING.</h2>
+<div class='parent'>
+    <div class='child1'>
+               
+        <iframe scrolling="no"; src="https://editor.p5js.org/adarshjadhav4/embed/OWHK5eIoS"></iframe>
+    </div>
+    <div class='child2'>
+        <div class='btn1'>
+            <button onclick="clipboard('copy')">Copy</button>
+        </div>
+        
+        <div class='btn1'>
+            <a href="https://editor.p5js.org/adarshjadhav4/sketches/OWHK5eIoS" class="button"><button>Edit</button></a>
+        </div>     
+    </div>
+    <div class='child3'>
+<pre class='copy'>
+var x = 200;
+var y = 200;
+var angle = 0;
+var angle1 = 0;
+var angle2 = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  angleMode(DEGREES);
+}
+
+function draw() {
+  background(0);
+  translate(200, 200);
+  rotate(-90);
+  noFill();
+
+  push();
+  stroke(255, 0, 92); //"#ff00ff"
+  strokeWeight(6.5);
+  arc(0, 0, 220, 220, 0, angle);
+  pop();
+
+  push();
+  stroke(104, 255, 0);
+  strokeWeight(6.5);
+  arc(0, 0, 200, 200, 0, angle1);
+  pop();
+
+  push();
+  stroke(0, 111, 255);
+  strokeWeight(6.5);
+  if(angle2 > (2 * 360)) {
+    arc(0, 0, 180, 180, 0, angle2 - (2 * 360));
+  } else if(angle2 > 360) {
+    arc(0, 0, 180, 180, 0, angle2 - 360);
+  } else {
+    arc(0, 0, 180, 180, 0, angle2);
+  }
+  pop();
+
+  //HOUR
+  push();
+  stroke(0, 111, 255);
+  rotate(angle2);
+  if(angle2 > 360) {
+    angle2 = 0;
+  }
+  strokeWeight(6);
+  line(0, 0, 40, 0);
+  ellipse(90, 0, 5, 5);
+  angle2 = ((720 * hour()) / 24);
+  pop();
+  //MINUTES
+  push();
+  stroke(104, 255, 0);
+  rotate(angle1);
+  if(angle1 > 360) {
+    angle1 = 0;
+  }
+  strokeWeight(6);
+  line(0, 0, 50, 0);
+  ellipse(100, 0, 5, 5);
+  angle1 = (360 * minute()) / 60;
+  pop();
+  //SECONDS
+  push();
+  stroke(255, 0, 92);
+  rotate(angle);
+  if(angle > 360) {
+    angle = 0;
+  }
+  strokeWeight(6);
+  line(0, 0, 70, 0);
+  ellipse(110, 0, 5, 5);
+  angle = (360 * second()) / 60;
+  pop();
+}
+</pre>
+
+
+    </div>
+   
+</div>
+
+<script src='../js/main.js'></script>
+  </body>
+</html>
